@@ -1,0 +1,40 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --port 8090",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "core-js": "^3.6.4",
+    "vant": "^2.5.5",
+    "vue": "^2.6.11",
+    "vue-router": "^3.1.5"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.2.0",
+    "@vue/cli-plugin-router": "^4.2.0",
+    "@vue/cli-service": "^4.2.0",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "vue": {
+    "publicPath": "",
+    "filenameHashing": true,
+    "productionSourceMap": false,
+    "devServer": {
+      "proxy": {
+        "/api": {
+          "target": "http://localhost:3000",
+          "changeOrigin": true,
+          "ws": true
+        }
+      }
+    }
+  }
+}
