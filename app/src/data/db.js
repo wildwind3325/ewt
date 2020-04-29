@@ -180,11 +180,12 @@ class DB {
    * @param {string} table 数据表名
    * @param {Array} fields 查询列
    * @param {string} where 查询条件
+   * @param {string} orderBy 排序
    * @param {any} params 参数
    */
-  async findByTable(table, fields, where, params) {
+  async findByTable(table, fields, where, orderBy, params) {
     let all = this.buildFields(fields);
-    let sql = 'SELECT ' + all + ' FROM `' + table + '` ' + where;
+    let sql = 'SELECT ' + all + ' FROM `' + table + '` ' + where + orderBy;
     let result = await this.execute(sql, {
       type: Sequelize.QueryTypes.SELECT,
       replacements: params
