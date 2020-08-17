@@ -195,7 +195,7 @@ class DB {
 
   /**
    * 执行分页查询操作
-   * @param {IFindOptions} options 配置数据
+   * @param {any} options 配置数据
    */
   async findByPage(options) {
     let sql = 'SELECT COUNT(*) AS `total` FROM `' + options.table + '` ' + options.where;
@@ -235,4 +235,4 @@ class DB {
   }
 }
 
-module.exprots = DB;
+module.exports = DB;
